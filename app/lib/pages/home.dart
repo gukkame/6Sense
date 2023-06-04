@@ -15,13 +15,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold( // Everything under return will be displayed on the screen
     backgroundColor: Colors.indigoAccent,
       appBar: AppBar(
-        title: Text(''),
+        toolbarHeight: 100,
+        iconTheme: IconThemeData(color: Colors.white, size: 70,),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
       endDrawer: Drawer(
+        backgroundColor: Colors.white,
         child: ListView(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.only(left: 30.0),
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
@@ -31,18 +33,84 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Menu',
                 style: TextStyle(
                   color: Colors.indigoAccent,
-                  fontSize: 50,
+                  fontSize: 70,
                 ),
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: Container(
+                  margin: EdgeInsets.only(right: 70, left: 20, bottom: 30,),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      border: Border.all(width: 7, color: Colors.indigoAccent,)),
+                      width: 100,
+                  child: Icon(
+                    Icons.settings_voice,
+                    color: Colors.indigoAccent,
+                    size: 100,
+                  ),
+                ),
               onTap: () {
                 // Handle sidebar item 1 tap
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('My Routes',
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 40,
+                ),),
+              onTap: () {
+                // Handle sidebar item 2 tap
+              },
+            ),
+            ListTile(
+              title: Text('Display',
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 40,
+                ),),
+              onTap: () {
+                // Handle sidebar item 2 tap
+              },
+            ),
+            ListTile(
+              title: Text('History',
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 40,
+                ),),
+              onTap: () {
+                // Handle sidebar item 2 tap
+              },
+            ),
+            ListTile(
+              title: Text('Profile',
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 40,
+                ),),
+              onTap: () {
+                // Handle sidebar item 2 tap
+              },
+            ),
+            ListTile(
+              title: Text('Deals',
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 40,
+                ),),
+              onTap: () {
+                // Handle sidebar item 2 tap
+              },
+            ),
+            ListTile(
+              title: Text('Settings',
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 40,
+                ),),
               onTap: () {
                 // Handle sidebar item 2 tap
               },
@@ -90,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
                 margin: EdgeInsets.only(top: 20.0),
                 padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0,),
-                height: 124,
+                height: 170,
                 width: 380,
                 decoration: BoxDecoration(
                 color: Colors.indigoAccent.shade100,
