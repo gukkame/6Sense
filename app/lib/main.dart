@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // import 'screens/displayrouts.dart';
 import 'screens/map.dart';
+import 'pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MapScreen(),
+      title: 'Nav App',
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(),
+        '/map': (context) => MapScreen(),
+      },
     );
   }
 }

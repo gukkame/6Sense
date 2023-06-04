@@ -15,14 +15,12 @@ class _MapScreenState extends State<MapScreen> {
   var tappedOnMarker = false;
   var addToFav = false;
   Icon icon = Icon(Icons.favorite_border);
- 
+
   CameraPosition camera =
       CameraPosition(target: LatLng(56.9634158, 24.1076823), zoom: 12);
   void _onMapCreated(GoogleMapController controller) async {
     mapController = controller;
   }
-
-
 
   @override
   void initState() {
@@ -48,7 +46,6 @@ class _MapScreenState extends State<MapScreen> {
               mapType: MapType.normal,
               myLocationEnabled: true,
               compassEnabled: true,
-     
             ),
           ),
           Positioned(
