@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'recording.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -16,7 +15,40 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold( // Everything under return will be displayed on the screen
     backgroundColor: Colors.indigoAccent,
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(''),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.indigoAccent,
+                  fontSize: 50,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                // Handle sidebar item 1 tap
+              },
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                // Handle sidebar item 2 tap
+              },
+            ),
+          ],
+        ),
       ),
       body:  SingleChildScrollView(
         child: Center(
@@ -24,10 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: 20.0),
               child: Text(
               'Where do you \n want to go \n?',
-              style: TextStyle(fontSize: 48,
+              style: TextStyle(fontSize: 50,
               fontWeight: FontWeight.bold,
               color: Colors.white,
               ),
@@ -37,6 +68,10 @@ class _MyHomePageState extends State<MyHomePage> {
             GestureDetector( // gesture for microphone button
             onTap: () {
               // Do something
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => RecordingPage()),
+              );
             },
             child: new Align(
                 child: Container(
@@ -53,8 +88,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 )),
           ),
             Container(
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0,),
-                height: 220,
+                margin: EdgeInsets.only(top: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0,),
+                height: 124,
                 width: 380,
                 decoration: BoxDecoration(
                 color: Colors.indigoAccent.shade100,
