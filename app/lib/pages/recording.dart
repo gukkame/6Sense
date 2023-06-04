@@ -1,27 +1,22 @@
-import 'package:app/widgets/RecordButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../widgets/SearchBar.dart';
+export 'recording.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+//Recording voice page in progress
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class RecordingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold( // Everything under return will be displayed on the screen
-    backgroundColor: Colors.indigoAccent,
+    return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         toolbarHeight: 100,
-        iconTheme: IconThemeData(color: Colors.white, size: 70,),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        iconTheme: IconThemeData(
+           color: Colors.indigoAccent,
+           size: 70,
+        ),
       ),
       endDrawer: Drawer(
         backgroundColor: Colors.white,
@@ -127,18 +122,31 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: 0.0),
+                margin: EdgeInsets.only(top: 50.0),
               child: Text(
-              'Where do you \n want to go \n?',
-              style: TextStyle(fontSize: 48,
+              'recording...',
+              style: TextStyle(fontSize: 50,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.indigoAccent,
               ),
               textAlign: TextAlign.center,
             ),
             ),
-          RecordButton(),
-          SearchLocation(),
+            Container(
+              /*child: Icon(
+                    Icons.water,
+                    color: Colors.indigoAccent,
+                    size: 400,
+                  ),*/
+                child: Image.network('https://assets-global.website-files.com/5f84a7b6c11fef0440b87eab/6021a75aee9e1644e009513b_Audio_Wave.gif')
+            ),
+            Container(
+              child: Icon(
+                    Icons.sync,
+                    color: Colors.indigoAccent,
+                    size: 170,
+                  ),
+            ),
           ],
         ),
       ),
