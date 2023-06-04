@@ -5,9 +5,7 @@ import '../widgets/SearchBar.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -130,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
               margin: EdgeInsets.only(top: 0.0),
               child: Text(
               'Where do you \n want to go \n?',
-              style: TextStyle(fontSize: 48,
+              style: TextStyle(fontSize: 50,
               fontWeight: FontWeight.bold,
               color: Colors.white,
               ),
