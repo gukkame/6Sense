@@ -18,11 +18,14 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
+      body:  SingleChildScrollView(
+        child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            Container(
+              margin: EdgeInsets.only(top: 20.0),
+              child: Text(
               'Where do you \n want to go \n?',
               style: TextStyle(fontSize: 48,
               fontWeight: FontWeight.bold,
@@ -30,18 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               textAlign: TextAlign.center,
             ),
+            ),
             GestureDetector( // gesture for microphone button
             onTap: () {
               // Do something
             },
             child: new Align(
-                //alignment: Alignment.bottomRight,
                 child: Container(
                   margin: EdgeInsets.all(20),
                   padding: EdgeInsets.all(50),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(300),
-                      border: Border.all(width: 15, color: Colors.white)),
+                      border: Border.all(width: 15, color: Colors.white,)),
                   child: Icon(
                     Icons.settings_voice,
                     color: Colors.white,
@@ -51,26 +54,37 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
             Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0,),
-                height: 200,
+                height: 220,
                 width: 380,
                 decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.indigoAccent.shade100,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(8.0),
+                  topLeft: Radius.circular(8.0),
+                )
                 ),
                 child: TextField(
+                  style: TextStyle(
+                    fontSize: 35.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.normal,
+                  ),
                 decoration: InputDecoration(
                 hintText: 'Search here...',
+                hintStyle: TextStyle(color: Colors.white, fontSize: 35,),
                 border: InputBorder.none,
                 icon: Icon(
                   Icons.search,
-                  color: Colors.indigoAccent,
-                  size: 100,
+                  color: Colors.white,
+                  size: 70,
                 ),
                 ),
               ),
             ),
           ],
         ),
+      ),
       ),
     );
   }
