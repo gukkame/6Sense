@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 export 'recording.dart';
 
-<<<<<<< HEAD
-//Recording voice page in progress
-
-=======
->>>>>>> 687cf4e92881d9630881e2d09d3fff79732be752
 class RecordingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -156,8 +151,4 @@ class RecordingPage extends StatelessWidget {
       ),
     );
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 687cf4e92881d9630881e2d09d3fff79732be752
