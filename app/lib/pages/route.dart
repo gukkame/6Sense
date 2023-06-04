@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../screens/map.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class RoutPage extends StatefulWidget {
+  const RoutPage({super.key});
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<RoutPage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<RoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,6 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
-import '../modules/place.dart';
+
 import '../permision.dart';
 
 class MapScreen extends StatefulWidget {
@@ -9,36 +9,20 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  LatLng currentLocation = LatLng(59.3530117, 27.4133083);
-  List<Place> favLocations = [];
+  LatLng currentLocation = LatLng(56.9634158, 24.1076823);
+
   late GoogleMapController mapController;
   var tappedOnMarker = false;
   var addToFav = false;
   Icon icon = Icon(Icons.favorite_border);
-  late Place lastTappedMarker = Place(title: '');
-
+ 
   CameraPosition camera =
-      CameraPosition(target: LatLng(59.3530117, 27.4133083), zoom: 12);
+      CameraPosition(target: LatLng(56.9634158, 24.1076823), zoom: 12);
   void _onMapCreated(GoogleMapController controller) async {
-    setState(() {
-      favLocations = favLocations;
-    });
     mapController = controller;
   }
 
-  void updateLocation(Place place) {
-    setState(() {
-      lastTappedMarker = place;
-      currentLocation = LatLng(place.lat!, place.lng!);
-      tappedOnMarker = true;
-      mapController.animateCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(
-          target: LatLng(currentLocation.latitude, currentLocation.longitude),
-          zoom: 15.0,
-        ),
-      ));
-    });
-  }
+
 
   @override
   void initState() {
@@ -64,7 +48,7 @@ class _MapScreenState extends State<MapScreen> {
               mapType: MapType.normal,
               myLocationEnabled: true,
               compassEnabled: true,
-              markers: convertPlacesToMarkers(favLocations),
+     
             ),
           ),
           Positioned(
