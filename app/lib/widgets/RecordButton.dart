@@ -24,7 +24,12 @@ class _RecordButtonState extends State<RecordButton> {
   void _listen() async {
     if (!_isListening) {
       bool available = await _speech.initialize(
-        onStatus: (val) => print('onStatus: $val'),
+        onStatus: (val) {
+          if (val == "done") {
+                navigate(context, "/map");
+          }
+          print('onStatus: $val');
+        },
         onError: (val) => print('onError: $val'),
       );
 
@@ -35,7 +40,7 @@ class _RecordButtonState extends State<RecordButton> {
             _text = val.recognizedWords;
           }),
         );
-        navigate(context, "/map");
+    
       }
     } else {
       setState(() => _isListening = false);
